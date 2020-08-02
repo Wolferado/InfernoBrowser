@@ -2,7 +2,7 @@
 _Creating a Chromium based browser like a professionals in the team._
 
 ## Things important to know:
-1. Branch ___"master"___ is a branch for our co-op project. All pull requests go straight to this branch __(all fixes, changes, updates and etc.)__.
+1. Branch ___"master"___ in ___"InfernoBrowser"___ repository is a branch for our co-op project. All pull requests go straight to this branch __(all fixes, changes, updates and etc.)__.
 
 2. Repository ___"datorium-chromium"___ is a repository with the project which we have been developing together with Elchin on the sessions __(created to refresh or remember some details while coding)__. Updated with comments.
 
