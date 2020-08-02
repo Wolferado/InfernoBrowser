@@ -4,7 +4,7 @@ _Creating a Chromium based browser like a professionals in the team._
 ## Things important to know:
 1. Branch ___"master"___ is a branch for our co-op project. All pull requests go straight to this branch __(all fixes, changes, updates and etc.)__.
 
-2. Branch ___"datorium-chromium"___ is a branch with the project which we have been developing together with Elchin on the sessions __(created to refresh or remember some details while coding)__. Updated with comments.
+2. Repository ___"datorium-chromium"___ is a repository with the project which we have been developing together with Elchin on the sessions __(created to refresh or remember some details while coding)__. Updated with comments.
 
 3. Clone ___"master"___ branch and use it for developing new features or coding. It would prevent from conflicts while merging your pull request with the branch.
 
