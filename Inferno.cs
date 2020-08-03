@@ -41,6 +41,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
+using CefSharp.Example.Handlers;
 using CefSharp.WinForms;
 
 namespace InfernoBrowser
@@ -48,14 +49,15 @@ namespace InfernoBrowser
     public partial class InfernoBrowser : Form
     {
         private ChromiumWebBrowser browser;
+        DownloadHandler downHandler = new DownloadHandler();
         public InfernoBrowser()
         {
             InitializeComponent();
             InitializeBrowser();
-            InitialiseForm();
+            InitializeForm();
         }
 
-        private void InitialiseForm()
+        private void InitializeForm()
         {
             BrowserTabs.Height = ClientRectangle.Height - 25;
         }
@@ -143,7 +145,6 @@ namespace InfernoBrowser
 
         private void AddBrowserTab()
         {
-
             var newTabPage = new TabPage();
             newTabPage.Text = "New Tab";
             BrowserTabs.TabPages.Insert(BrowserTabs.TabPages.Count - 1, newTabPage);
@@ -154,6 +155,8 @@ namespace InfernoBrowser
             browser.TitleChanged += Browser_TitleChanged;
             browser.TitleChanged += Browser_TitleChanged;
             newTabPage.Controls.Add(browser);
+
+            browser.DownloadHandler = downHandler; //Enabling Download feature through links.
         }
 
         private void BrowserTabs_Click(object sender, EventArgs e)

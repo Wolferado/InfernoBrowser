@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DownloadHandler.cs" />
     <Compile Include="Inferno.cs">
       <SubType>Form</SubType>
     </Compile>
