@@ -65,8 +65,9 @@ namespace InfernoBrowser
         private void InitializeBrowser()
         {
             Cef.Initialize(new CefSettings());
-            BrowserTabs.TabPages[0].Dispose();
-            AddBrowserTab();
+
+            AddBrowser();
+            BrowserTabs.TabPages[0].Controls.Add(browser);
         }
 
         private void toolStripButtonGo_Click(object sender, EventArgs e)
@@ -143,20 +144,24 @@ namespace InfernoBrowser
             BrowserTabs.SelectedTab = BrowserTabs.TabPages[BrowserTabs.TabPages.Count - 2];
         }
 
-        private void AddBrowserTab()
+        private void AddBrowser()
         {
-            var newTabPage = new TabPage();
-            newTabPage.Text = "New Tab";
-            BrowserTabs.TabPages.Insert(BrowserTabs.TabPages.Count - 1, newTabPage);
-
             browser = new ChromiumWebBrowser("https://datorium.eu");
             browser.Dock = DockStyle.Fill;
             browser.AddressChanged += Browser_AddressChanged;
             browser.TitleChanged += Browser_TitleChanged;
             browser.TitleChanged += Browser_TitleChanged;
-            newTabPage.Controls.Add(browser);
 
-            browser.DownloadHandler = downHandler; //Enabling Download feature through links.
+            browser.DownloadHandler = downHandler; //Enabling Download feature through links. (check DownloadHandler.cs)
+        }
+
+        private void AddBrowserTab()
+        {
+            var newTabPage = new TabPage();
+            newTabPage.Text = "New Tab";
+            BrowserTabs.TabPages.Insert(BrowserTabs.TabPages.Count - 1, newTabPage);
+            AddBrowser();
+            newTabPage.Controls.Add(browser);
         }
 
         private void BrowserTabs_Click(object sender, EventArgs e)
