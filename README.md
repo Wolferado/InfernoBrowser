@@ -19,4 +19,4 @@ _If you encounter a problem, that this project won't load properly (a lot of err
 
 3. Change at second layer class name to a different one _(even adding one letter would work)_. It fixes the Designer, so it could work.
 
-## Don't be shy and code together like a team! :)
+## Don't be shy and code together like a team. :)
