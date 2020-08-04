@@ -6,7 +6,15 @@ _Creating a Chromium based browser like a professionals in the team._
 
 2. Repository ___"datorium-chromium"___ is a repository with the project which we have been developing together with Elchin on the sessions __(created to refresh or remember some details while coding)__. Updated with comments.
 
-3. Clone ___"master"___ branch and use it for developing new features or coding. It would prevent from conflicts while merging your pull request with the branch.
+3. Fork ___"master"___ branch and use it for developing new features or coding. It would prevent from conflicts when merging your pull request with the branch.
+
+4. This project contains some NuGet packages for features to work and for stable processing:
+* cef.redist.x64
+* cef.redist.x86
+* CefSharp.Common
+* CefSharp.WinForms
+* Syroot.Windows.IO.KnownFolders
+* System.Security.Principal.Windows
 
 List could be updated while working.
 
