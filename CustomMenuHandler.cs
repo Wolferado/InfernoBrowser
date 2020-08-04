@@ -26,8 +26,8 @@ public class CustomMenuHandler : IContextMenuHandler
             model.AddSeparator();
         }
 
-        model.AddItem((CefMenuCommand)26501, "Show DevTools");
-        model.AddItem((CefMenuCommand)26502, "Close DevTools");
+        model.AddItem((CefMenuCommand)26501, "Show DevTools"); //Default commands
+        model.AddItem((CefMenuCommand)26502, "Close DevTools"); //Default commands
 
         model.AddSeparator();
 
