@@ -46,7 +46,7 @@ using CefSharp.WinForms;
 
 namespace InfernoBrowser
 {
-    public partial class InfernoBrowser : Form
+    public partial class Inferno : Form
     {
         private ChromiumWebBrowser browser;
         DownloadHandler downHandler = new DownloadHandler();
