@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using CefSharp;
 using System.Windows.Forms;
 using System.Drawing;
@@ -8,7 +8,8 @@ using System.Deployment.Application;
 using System.ComponentModel;
 using System.IO;
 using Syroot.Windows.IO;
-
+using System.Diagnostics;
+using System.CodeDom.Compiler;
 
 public class CustomMenuHandler : IContextMenuHandler
 {
@@ -31,9 +32,9 @@ public class CustomMenuHandler : IContextMenuHandler
 
         model.AddSeparator();
 
-        model.AddItem((CefMenuCommand)113, "Copy");
-
+        model.AddItem((CefMenuCommand)26506, "Copy Image");
         model.AddItem((CefMenuCommand)26504, "Save image");
+        model.AddItem((CefMenuCommand)26505, "Save image as");
 
         model.AddSeparator();
 
@@ -61,16 +62,24 @@ public class CustomMenuHandler : IContextMenuHandler
             return true;
         }
 
-        if (commandId == (CefMenuCommand)113) // Copy
+        if (commandId == (CefMenuCommand)26506) // Copy Image
         {
 
-            if (parameters.LinkUrl.Length > 0)
-            {
-                Clipboard.SetText(parameters.LinkUrl);
-            }
-            if (parameters.MediaType == ContextMenuMediaType.Image)
-            {
-                Clipboard.SetText(parameters.SourceUrl);
+                if (parameters.LinkUrl.Length > 0)
+                {
+
+                    Clipboard.SetText(parameters.LinkUrl);
+
+                }
+                if (parameters.MediaType == ContextMenuMediaType.Image)
+                {
+                    Clipboard.SetText(parameters.SourceUrl);
+
+                    string subPath = @"C:\temp";
+
+                    System.IO.Directory.CreateDirectory(subPath);
+
+                    SaveImage(parameters.SourceUrl);
             }
         }
 
@@ -84,7 +93,31 @@ public class CustomMenuHandler : IContextMenuHandler
             }
             if (parameters.MediaType == ContextMenuMediaType.Image)
             {
-                Download(parameters.SourceUrl);
+                string downloadFolder = new KnownFolder(KnownFolderType.Downloads).Path;
+
+                Download(parameters.SourceUrl, downloadFolder);
+            }
+        }
+
+        if (commandId == (CefMenuCommand)26505) //Save as
+        {
+            if (parameters.LinkUrl.Length > 0)
+            {
+
+                Clipboard.SetText(parameters.LinkUrl);
+
+            }
+            if (parameters.MediaType == ContextMenuMediaType.Image)
+            {
+                using (var fbd = new FolderBrowserDialog())
+                {
+                    DialogResult result = fbd.ShowDialog();
+
+                    if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                    {
+                        Download(parameters.SourceUrl, fbd.SelectedPath);
+                    }
+                }
             }
         }
 
@@ -106,9 +139,9 @@ public class CustomMenuHandler : IContextMenuHandler
 
     //Here you can make different commands
 
-    public void Download(string url)
+    public void Download(string url, string filePath)
     {
-        string filePath = new KnownFolder(KnownFolderType.Downloads).Path + @"\";
+        filePath += @"\";
         Console.WriteLine("Downloads folder path: " + filePath);
         string fileAndPath = filePath + Path.GetFileName(url);
         using (WebClient client = new WebClient())
@@ -132,4 +165,32 @@ public class CustomMenuHandler : IContextMenuHandler
     {
         Console.WriteLine("File has been downloaded.");
     }
+
+    public void SaveImage(string imageUrl)
+    {
+        System.Net.WebClient client = new WebClient();
+        System.IO.Stream stream = client.OpenRead(imageUrl);
+        Bitmap bitmap = new Bitmap(stream);
+
+        if (bitmap != null)
+        {
+            Clipboard.SetImage(bitmap);
+            //bitmap.Save(filename, format);
+        }
+
+        string filePath = @"C:\temp";
+        bitmap.Dispose();
+        foreach (string file in Directory.GetFiles(filePath))
+        {
+            FileInfo fi = new FileInfo(file);
+            if (fi.Name == "temp.bmp")
+            {
+                fi.Delete();
+            }
+        }
+        stream.Flush();
+        stream.Close();
+        client.Dispose();
+    }
 }
+
