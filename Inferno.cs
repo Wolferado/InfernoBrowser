@@ -50,6 +50,7 @@ namespace InfernoBrowser
     {
         private ChromiumWebBrowser browser;
         DownloadHandler downHandler = new DownloadHandler();
+        CustomMenuHandler mainMenuHandler = new CustomMenuHandler();
         public InfernoBrowser()
         {
             InitializeComponent();
@@ -60,6 +61,12 @@ namespace InfernoBrowser
         private void InitializeForm()
         {
             BrowserTabs.Height = ClientRectangle.Height - 25;
+        }
+
+        private void InitializeHandlers()
+        {
+            browser.DownloadHandler = downHandler; //Enabling Download feature through links. (check DownloadHandler.cs)
+            browser.MenuHandler = mainMenuHandler; //Enables custom context menu. Right click on the browser to see it. (check CustomMenuHandler.cs if you want :D)
         }
 
         private void InitializeBrowser()
@@ -152,7 +159,7 @@ namespace InfernoBrowser
             browser.TitleChanged += Browser_TitleChanged;
             browser.TitleChanged += Browser_TitleChanged;
 
-            browser.DownloadHandler = downHandler; //Enabling Download feature through links. (check DownloadHandler.cs)
+            InitializeHandlers();
         }
 
         private void AddBrowserTab()
