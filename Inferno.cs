@@ -24,6 +24,7 @@
  *      Mark26B (@Mark26)
  *      MateoPs (@osioss)
  *      Strykeros (@Strykeros)
+ *      ProfesorGarfieldII (@Arvils)
  *  
  *  ========= _C# TUTOR AND SUPPORT_ =========
  *  
@@ -68,7 +69,7 @@ namespace InfernoBrowser
         private void InitializeHandlers()
         {
             browser.DownloadHandler = downHandler; //Enabling Download feature through links. (check DownloadHandler.cs)
-            browser.MenuHandler = mainMenuHandler; //Enables custom context menu. Right click on the browser to see it. (check CustomMenuHandler.cs if you want :D)
+            browser.MenuHandler = mainMenuHandler; //Enables custom context menu. Right click on the browser to see it. (check CustomMenuHandler.cs)
         }
 
         private void InitializeBrowser()
@@ -82,7 +83,7 @@ namespace InfernoBrowser
             {
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html")))
                 {
-                    outputFile.WriteLine("<!DOCTYPE html><head><title>Browser history</title></head><body><h1>Browserhistory</h1><ul>");
+                    outputFile.WriteLine("<!DOCTYPE html><head><title>History</title></head><body><h1>Browser History</h1><ul></body></html>");
                 }
             }
         }
@@ -134,7 +135,6 @@ namespace InfernoBrowser
         private void toolStripButtonReload_Click(object sender, EventArgs e)
         {
             browser.Reload();
-            AddToHistory(toolStripAddressBar.Text);
         }
 
         private void toolStripAddressBar_KeyDown(object sender, KeyEventArgs e)
@@ -227,6 +227,9 @@ namespace InfernoBrowser
                 }
             }
         }
+        
+        //Methods to register visited links in the history.html. Solved by @Glorwen.
+        
         private void toolStripButtonHistory_Click(object sender, EventArgs e)
         {
             AddBrowserTab();
@@ -236,7 +239,8 @@ namespace InfernoBrowser
                 outputFile.WriteLine("</ul></body></html>");
             }
             Navigate(docPath + "History.html");
-            //render the html page that was made
+            
+            //Render the html page that was made
             string historyHtmlPage = File.ReadAllText(docPath + "History.html");
             LoadCustomHTML(historyHtmlPage);
             historyHtmlPage = historyHtmlPage.Replace("</ul></body></html>", "");
