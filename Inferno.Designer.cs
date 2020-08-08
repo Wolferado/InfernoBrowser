@@ -36,10 +36,10 @@
             this.toolStripAddressBar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddTab = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
             this.BrowserTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.BrowserTabs.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +118,17 @@
             this.toolStripButtonAddTab.Text = "Add Tab";
             this.toolStripButtonAddTab.Click += new System.EventHandler(this.toolStripButtonAddTab_Click);
             // 
+            // toolStripButtonHistory
+            // 
+            this.toolStripButtonHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonHistory.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHistory.Image")));
+            this.toolStripButtonHistory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonHistory.Name = "toolStripButtonHistory";
+            this.toolStripButtonHistory.RightToLeftAutoMirrorImage = true;
+            this.toolStripButtonHistory.Size = new System.Drawing.Size(49, 22);
+            this.toolStripButtonHistory.Text = "History";
+            this.toolStripButtonHistory.Click += new System.EventHandler(this.toolStripButtonHistory_Click);
+            // 
             // BrowserTabs
             // 
             this.BrowserTabs.Controls.Add(this.tabPage1);
@@ -146,29 +157,19 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 398);
+            this.tabPage2.Size = new System.Drawing.Size(792, 399);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "+";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // toolStripButtonHistory
-            // 
-            this.toolStripButtonHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonHistory.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHistory.Image")));
-            this.toolStripButtonHistory.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonHistory.Name = "toolStripButtonHistory";
-            this.toolStripButtonHistory.RightToLeftAutoMirrorImage = true;
-            this.toolStripButtonHistory.Size = new System.Drawing.Size(49, 22);
-            this.toolStripButtonHistory.Text = "History";
-            // 
-            // Inferno
+            // InfernoBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BrowserTabs);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "Inferno";
+            this.Name = "InfernoBrowser";
             this.Text = "InfernoBrowser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InfernoBrowser_FormClosing);
             this.toolStrip1.ResumeLayout(false);
