@@ -70,6 +70,8 @@ public class CustomMenuHandler : IContextMenuHandler
             //    Clipboard.SetText(parameters.LinkUrl);
 
             //}
+
+
             Clipboard.SetText(parameters.SourceUrl);
 
             string subPath = @"C:\temp";
@@ -77,23 +79,18 @@ public class CustomMenuHandler : IContextMenuHandler
             System.IO.Directory.CreateDirectory(subPath);
 
             SaveImage(parameters.SourceUrl);
-
         }
 
         if (commandId == (CefMenuCommand)26504) //Save Image
         {
-            if (parameters.MediaType == ContextMenuMediaType.Image)
-            {
-                string downloadFolder = new KnownFolder(KnownFolderType.Downloads).Path;
+            string downloadFolder = new KnownFolder(KnownFolderType.Downloads).Path;
 
-                Download(parameters.SourceUrl, downloadFolder);
-            }
+            Download(parameters.SourceUrl, downloadFolder);
         }
 
         if (commandId == (CefMenuCommand)26505) //Save as
         {
             var saveDialog = new FolderBrowserDialog();
-
             DialogResult result = saveDialog.ShowDialog();
 
             if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(saveDialog.SelectedPath))
