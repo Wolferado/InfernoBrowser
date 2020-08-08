@@ -32,13 +32,10 @@ public class CustomMenuHandler : IContextMenuHandler
 
         model.AddSeparator();
 
-        if (parameters.MediaType == ContextMenuMediaType.Image)
-        {
-            model.AddItem((CefMenuCommand)26506, "Copy Image");
-            model.AddItem((CefMenuCommand)26504, "Save image");
-            model.AddItem((CefMenuCommand)26505, "Save image as");
-            model.AddSeparator();
-        }
+        model.AddItem((CefMenuCommand)26506, "Copy Image");
+        model.AddItem((CefMenuCommand)26504, "Save image");
+        model.AddItem((CefMenuCommand)26505, "Save image as");
+        model.AddSeparator();
 
         model.AddItem((CefMenuCommand)26503, "Display alert message");
     }
@@ -73,9 +70,12 @@ public class CustomMenuHandler : IContextMenuHandler
             //    Clipboard.SetText(parameters.LinkUrl);
 
             //}
-            string subPath = @"C:\temp";
+
 
             Clipboard.SetText(parameters.SourceUrl);
+
+            string subPath = @"C:\temp";
+
             System.IO.Directory.CreateDirectory(subPath);
 
             SaveImage(parameters.SourceUrl);
