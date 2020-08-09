@@ -75,6 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DownloadHandler.cs" />
+    <Compile Include="ExtensionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensionsWindow.Designer.cs">
+      <DependentUpon>ExtensionsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inferno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExtensionsWindow.resx">
+      <DependentUpon>ExtensionsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inferno.resx">
       <DependentUpon>Inferno.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -108,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExtForm_Shape.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

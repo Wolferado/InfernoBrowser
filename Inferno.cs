@@ -50,16 +50,19 @@ namespace InfernoBrowser
     {
         private ChromiumWebBrowser browser;
         DownloadHandler downHandler = new DownloadHandler();
-        public InfernoBrowser()
+        ExtensionsWindow extwin = new ExtensionsWindow();
+        public Inferno()
         {
             InitializeComponent();
             InitializeBrowser();
             InitializeForm();
+            InitializeExtensionswindow();
         }
 
         private void InitializeForm()
         {
             BrowserTabs.Height = ClientRectangle.Height - 25;
+            isOpen = true;
         }
 
         private void InitializeBrowser()
@@ -68,6 +71,13 @@ namespace InfernoBrowser
 
             AddBrowser();
             BrowserTabs.TabPages[0].Controls.Add(browser);
+        }
+
+        private void InitializeExtensionswindow()
+        {
+            extwin.InitializeExtWin();
+            extwin.Height = 250;
+            extwin.Width = 250;
         }
 
         private void toolStripButtonGo_Click(object sender, EventArgs e)
@@ -204,6 +214,26 @@ namespace InfernoBrowser
                     e.Cancel = true;
                 }
             }
+        }
+
+        public bool isOpen { get; set; }
+        private void ExtensionsPicBox_Click(object sender, EventArgs e)
+        {
+            if (isOpen)
+            {
+                extwin.Show();
+            }
+            else
+            {
+                extwin.Hide();
+            }
+            isOpen = !isOpen;
+        }
+
+        private void Inferno_LocationChanged(object sender, EventArgs e)
+        {
+            extwin.Top = this.Top + 55;
+            extwin.Left = this.Left + 440;
         }
     }
 }

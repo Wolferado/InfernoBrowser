@@ -16,7 +16,7 @@ namespace InfernoBrowser
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InfernoBrowser());
+            Application.Run(new Inferno());
         }
     }
 }
