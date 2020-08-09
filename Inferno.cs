@@ -24,6 +24,7 @@
  *      Mark26B (@Mark26)
  *      MateoPs (@osioss)
  *      Strykeros (@Strykeros)
+ *      ProfesorGarfieldII (@Arvils)
  *  
  *  ========= _C# TUTOR AND SUPPORT_ =========
  *  
@@ -43,6 +44,7 @@ using System.Windows.Forms;
 using CefSharp;
 using CefSharp.Example.Handlers;
 using CefSharp.WinForms;
+using System.IO;
 
 namespace InfernoBrowser
 {
@@ -52,6 +54,8 @@ namespace InfernoBrowser
         DownloadHandler downHandler = new DownloadHandler();
         ExtensionsWindow extwin = new ExtensionsWindow();
         public Inferno()
+        CustomMenuHandler mainMenuHandler = new CustomMenuHandler();
+        string docPath = @"C:\Users\Public\Documents\";
         {
             InitializeComponent();
             InitializeBrowser();
@@ -65,12 +69,26 @@ namespace InfernoBrowser
             isOpen = true;
         }
 
+        private void InitializeHandlers()
+        {
+            browser.DownloadHandler = downHandler; //Enabling Download feature through links. (check DownloadHandler.cs)
+            browser.MenuHandler = mainMenuHandler; //Enables custom context menu. Right click on the browser to see it. (check CustomMenuHandler.cs)
+        }
+
         private void InitializeBrowser()
         {
             Cef.Initialize(new CefSettings());
 
             AddBrowser();
             BrowserTabs.TabPages[0].Controls.Add(browser);
+
+            if (!File.Exists(docPath + "History.html"))
+            {
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html")))
+                {
+                    outputFile.WriteLine("<!DOCTYPE html><head><title>History</title></head><body><h1>Browser History</h1><ul></body></html>");
+                }
+            }
         }
 
         private void InitializeExtensionswindow()
@@ -83,16 +101,19 @@ namespace InfernoBrowser
         private void toolStripButtonGo_Click(object sender, EventArgs e)
         {
             Navigate(toolStripAddressBar.Text);
+            AddToHistory(toolStripAddressBar.Text);
         }
 
         private void toolStripButtonBack_Click(object sender, EventArgs e)
         {
             browser.Back();
+            AddToHistory(toolStripAddressBar.Text);
         }
 
         private void toolStripButtonForward_Click(object sender, EventArgs e)
         {
             browser.Forward();
+            AddToHistory(toolStripAddressBar.Text);
         }
 
         private void Browser_AddressChanged(object sender, AddressChangedEventArgs e)
@@ -132,6 +153,7 @@ namespace InfernoBrowser
             {
                 Navigate(toolStripAddressBar.Text);
                 e.SuppressKeyPress = true; //Feature to disable "beep" sound when hitting "Enter". Solved by @nicky.
+                AddToHistory(toolStripAddressBar.Text);
             }
         }
 
@@ -162,7 +184,7 @@ namespace InfernoBrowser
             browser.TitleChanged += Browser_TitleChanged;
             browser.TitleChanged += Browser_TitleChanged;
 
-            browser.DownloadHandler = downHandler; //Enabling Download feature through links. (check DownloadHandler.cs)
+            InitializeHandlers();
         }
 
         private void AddBrowserTab()
@@ -195,7 +217,7 @@ namespace InfernoBrowser
         }
 
         //Method to display a warning when exiting a browser with 2 or more tabs. Solved by @Wolferado.
-        private void InfernoBrowser_FormClosing(object sender, FormClosingEventArgs e) 
+        private void Inferno_FormClosing(object sender, FormClosingEventArgs e) 
         {
             int tabCount = BrowserTabs.TabPages.Count - 1;
             string title = "Warning";
@@ -240,6 +262,41 @@ namespace InfernoBrowser
             extwin.Top = this.Top + 55;
             extwin.Left = this.Left + 440;
         }
+        
+        //Methods to register visited links in the history.html. Solved by @Glorwen.
+        
+        private void toolStripButtonHistory_Click(object sender, EventArgs e)
+        {
+            AddBrowserTab();
+            toolStripAddressBar.Text = "History";
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
+            {
+                outputFile.WriteLine("</ul></body></html>");
+            }
+            Navigate(docPath + "History.html");
+            
+            //Render the html page that was made
+            string historyHtmlPage = File.ReadAllText(docPath + "History.html");
+            LoadCustomHTML(historyHtmlPage);
+            historyHtmlPage = historyHtmlPage.Replace("</ul></body></html>", "");
+            File.WriteAllText(docPath + "History.html", historyHtmlPage);
 
+        }
+
+        private void LoadCustomHTML(string htmlContent)
+        {
+            var selectedTabPage = (TabPage)BrowserTabs.SelectedTab;
+            var selectedBrowser = (ChromiumWebBrowser)selectedTabPage.Controls[0];
+            selectedBrowser.LoadHtml(htmlContent);
+        }
+
+        private void AddToHistory(string url)
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
+            {
+                outputFile.WriteLine($"<li>{DateTime.Now} {url}</li>");
+            }
+
+        }
     }
 }
