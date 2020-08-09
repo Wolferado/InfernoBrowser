@@ -28,6 +28,5 @@ namespace InfernoBrowser
             this.BackColor = Color.FromArgb(232, 70, 21);
             this.BackgroundImage = Properties.Resources.ExtForm_Shape;
         }
-
     }
 }
