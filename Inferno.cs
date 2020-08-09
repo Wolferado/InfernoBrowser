@@ -232,8 +232,14 @@ namespace InfernoBrowser
 
         private void Inferno_LocationChanged(object sender, EventArgs e)
         {
+            ChangeExtWinLoc();
+        }
+
+        private void ChangeExtWinLoc()
+        {
             extwin.Top = this.Top + 55;
             extwin.Left = this.Left + 440;
         }
+
     }
 }
