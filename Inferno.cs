@@ -53,9 +53,9 @@ namespace InfernoBrowser
         private ChromiumWebBrowser browser;
         DownloadHandler downHandler = new DownloadHandler();
         ExtensionsWindow extwin = new ExtensionsWindow();
-        public Inferno()
         CustomMenuHandler mainMenuHandler = new CustomMenuHandler();
         string docPath = @"C:\Users\Public\Documents\";
+        public Inferno()
         {
             InitializeComponent();
             InitializeBrowser();
