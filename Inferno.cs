@@ -48,22 +48,25 @@ using System.IO;
 
 namespace InfernoBrowser
 {
-    public partial class InfernoBrowser : Form
+    public partial class Inferno : Form
     {
         private ChromiumWebBrowser browser;
         DownloadHandler downHandler = new DownloadHandler();
+        ExtensionsWindow extwin = new ExtensionsWindow();
+        public Inferno()
         CustomMenuHandler mainMenuHandler = new CustomMenuHandler();
         string docPath = @"C:\Users\Public\Documents\";
-        public InfernoBrowser()
         {
             InitializeComponent();
             InitializeBrowser();
             InitializeForm();
+            InitializeExtensionswindow();
         }
 
         private void InitializeForm()
         {
             BrowserTabs.Height = ClientRectangle.Height - 25;
+            isOpen = true;
         }
 
         private void InitializeHandlers()
@@ -86,6 +89,13 @@ namespace InfernoBrowser
                     outputFile.WriteLine("<!DOCTYPE html><head><title>History</title></head><body><h1>Browser History</h1><ul></body></html>");
                 }
             }
+        }
+
+        private void InitializeExtensionswindow()
+        {
+            extwin.InitializeExtWin();
+            extwin.Height = 250;
+            extwin.Width = 250;
         }
 
         private void toolStripButtonGo_Click(object sender, EventArgs e)
@@ -207,7 +217,7 @@ namespace InfernoBrowser
         }
 
         //Method to display a warning when exiting a browser with 2 or more tabs. Solved by @Wolferado.
-        private void InfernoBrowser_FormClosing(object sender, FormClosingEventArgs e) 
+        private void Inferno_FormClosing(object sender, FormClosingEventArgs e) 
         {
             int tabCount = BrowserTabs.TabPages.Count - 1;
             string title = "Warning";
@@ -226,6 +236,31 @@ namespace InfernoBrowser
                     e.Cancel = true;
                 }
             }
+        }
+
+        public bool isOpen { get; set; }
+        private void ExtensionsPicBox_Click(object sender, EventArgs e)
+        {
+            if (isOpen)
+            {
+                extwin.Show();
+            }
+            else
+            {
+                extwin.Hide();
+            }
+            isOpen = !isOpen;
+        }
+
+        private void Inferno_LocationChanged(object sender, EventArgs e)
+        {
+            ChangeExtWinLoc();
+        }
+
+        private void ChangeExtWinLoc()
+        {
+            extwin.Top = this.Top + 55;
+            extwin.Left = this.Left + 440;
         }
         
         //Methods to register visited links in the history.html. Solved by @Glorwen.

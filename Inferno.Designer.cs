@@ -1,6 +1,6 @@
 ﻿namespace InfernoBrowser
 {
-    partial class InfernoBrowser
+    partial class Inferno
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfernoBrowser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inferno));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonForward = new System.Windows.Forms.ToolStripButton();
@@ -40,8 +40,10 @@
             this.BrowserTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.extensiosPicBox = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.BrowserTabs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.extensiosPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -162,19 +164,33 @@
             this.tabPage2.Text = "+";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // InfernoBrowser
+            // extensiosPicBox
+            // 
+            this.extensiosPicBox.BackColor = System.Drawing.Color.Transparent;
+            this.extensiosPicBox.Image = ((System.Drawing.Image)(resources.GetObject("extensiosPicBox.Image")));
+            this.extensiosPicBox.Location = new System.Drawing.Point(539, 0);
+            this.extensiosPicBox.Name = "extensiosPicBox";
+            this.extensiosPicBox.Size = new System.Drawing.Size(30, 25);
+            this.extensiosPicBox.TabIndex = 2;
+            this.extensiosPicBox.TabStop = false;
+            this.extensiosPicBox.Click += new System.EventHandler(this.ExtensionsPicBox_Click);
+            // 
+            // Inferno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(779, 483);
             this.Controls.Add(this.BrowserTabs);
+            this.Controls.Add(this.extensiosPicBox);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "InfernoBrowser";
+            this.Name = "Inferno";
             this.Text = "InfernoBrowser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InfernoBrowser_FormClosing);
+            this.LocationChanged += new System.EventHandler(this.Inferno_LocationChanged);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.BrowserTabs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.extensiosPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,6 +208,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddTab;
+        private System.Windows.Forms.PictureBox extensiosPicBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonHistory;
     }
 }
