@@ -1,4 +1,4 @@
-﻿namespace InfernoBrowser
+namespace InfernoBrowser
 {
     partial class Inferno
     {
@@ -185,7 +185,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Inferno";
             this.Text = "InfernoBrowser";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InfernoBrowser_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inferno_FormClosing);
             this.LocationChanged += new System.EventHandler(this.Inferno_LocationChanged);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
