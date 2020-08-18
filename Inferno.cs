@@ -45,6 +45,7 @@ using CefSharp;
 using CefSharp.Example.Handlers;
 using CefSharp.WinForms;
 using System.IO;
+using InfernoBrowser.Properties;
 
 namespace InfernoBrowser
 {
@@ -55,12 +56,14 @@ namespace InfernoBrowser
         ExtensionsWindow extwin = new ExtensionsWindow();
         CustomMenuHandler mainMenuHandler = new CustomMenuHandler();
         string docPath = @"C:\Users\Public\Documents\";
+        string[] domains = { ".com", ".uk", ".de", ".ru", ".org", ".net", ".in", ".ir", ".br", ".au" };
+
         public Inferno()
         {
             InitializeComponent();
             InitializeBrowser();
             InitializeForm();
-            InitializeExtensionswindow();
+            InitializeExtensionsWindow();
         }
 
         private void InitializeForm()
@@ -91,29 +94,78 @@ namespace InfernoBrowser
             }
         }
 
-        private void InitializeExtensionswindow()
-        {
-            extwin.InitializeExtWin();
-            extwin.Height = 250;
-            extwin.Width = 250;
-        }
-
         private void toolStripButtonGo_Click(object sender, EventArgs e)
         {
             Navigate(toolStripAddressBar.Text);
-            AddToHistory(toolStripAddressBar.Text);
+            //AddToHistory(toolStripAddressBar.Text);
         }
 
         private void toolStripButtonBack_Click(object sender, EventArgs e)
         {
             browser.Back();
-            AddToHistory(toolStripAddressBar.Text);
+            //AddToHistory(toolStripAddressBar.Text);
         }
 
         private void toolStripButtonForward_Click(object sender, EventArgs e)
         {
             browser.Forward();
-            AddToHistory(toolStripAddressBar.Text);
+            //AddToHistory(toolStripAddressBar.Text);
+        }
+
+        private void toolStripButtonReload_Click(object sender, EventArgs e)
+        {
+            browser.Reload();
+        }
+
+        //Method to close all tabs and open 1 new tab. Solved by @IKSAKS
+        private void toolStripButtonCloseAndOpen_Click(object sender, EventArgs e)
+        {
+            int tabCount = BrowserTabs.TabPages.Count - 1;
+
+            for (int i = 0; i < tabCount; i++)
+            {
+                BrowserTabs.TabPages.Remove(BrowserTabs.SelectedTab);
+
+            }
+            AddBrowserTab();
+            BrowserTabs.SelectTab(0);
+        }
+
+        private void toolStripAddressBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Navigate(toolStripAddressBar.Text);
+                e.SuppressKeyPress = true; //Feature to disable "beep" sound when hitting "Enter". Solved by @nicky.
+                //AddToHistory(toolStripAddressBar.Text);
+            }
+        }
+
+        private void toolStripButtonAddTab_Click(object sender, EventArgs e)
+        {
+            AddBrowserTab();
+            BrowserTabs.SelectedTab = BrowserTabs.TabPages[BrowserTabs.TabPages.Count - 2];
+        }
+
+        //Method to close the selected tab. Solved by @IKSAKS.
+        private void toolStripButtonCloseTab_Click(object sender, EventArgs e)
+        {
+            int tabCount = BrowserTabs.TabPages.Count - 1;
+            if (tabCount > 1)
+            {
+                BrowserTabs.TabPages.Remove(BrowserTabs.SelectedTab);
+            }
+            else
+            {
+
+                string title = "Warning";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("Are you sure you want to close this browser?", title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
         }
 
         private void Browser_AddressChanged(object sender, AddressChangedEventArgs e)
@@ -126,6 +178,8 @@ namespace InfernoBrowser
                 {
                     toolStripAddressBar.Text = e.Address;
                 }));
+
+                AddToHistory(toolStripAddressBar.Text);
             }
             catch
             {
@@ -142,27 +196,20 @@ namespace InfernoBrowser
             }));
         }
 
-        private void toolStripButtonReload_Click(object sender, EventArgs e)
-        {
-            browser.Reload();
-        }
-
-        private void toolStripAddressBar_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Navigate(toolStripAddressBar.Text);
-                e.SuppressKeyPress = true; //Feature to disable "beep" sound when hitting "Enter". Solved by @nicky.
-                AddToHistory(toolStripAddressBar.Text);
-            }
-        }
-
         private void Navigate(string address)
         {
             try
             {
                 var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
-                selectedBrowser.Load(address);
+
+                if (domains.Any(toolStripAddressBar.Text.Contains)) //IF statement which defines if Address Bar contains domain. Suggested and developed by @Arvils.
+                {
+                    selectedBrowser.Load(toolStripAddressBar.Text);
+                }
+                else
+                {
+                    selectedBrowser.Load("https://www.google.com/search?q=" + toolStripAddressBar.Text + "&rlz=1C1CHBD_lvLV844LV844&oq=" + toolStripAddressBar.Text + "&aqs=chrome..69i57j0l5.12767j1j7&sourceid=chrome&ie=UTF-8");
+                }
             }
             catch
             {
@@ -170,18 +217,15 @@ namespace InfernoBrowser
             }
         }
 
-        private void toolStripButtonAddTab_Click(object sender, EventArgs e)
-        {
-            AddBrowserTab();
-            BrowserTabs.SelectedTab = BrowserTabs.TabPages[BrowserTabs.TabPages.Count - 2];
-        }
-
         private void AddBrowser()
         {
-            browser = new ChromiumWebBrowser("https://datorium.eu");
+            //Getting FolderPath so Main Page would work at any PC. Developed and solved by @Wolferado.
+            var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            var mainPagePath = userProfile + @"\source\repos\InfernoBrowser\Resources\Inferno_Main_Page.html";
+
+            browser = new ChromiumWebBrowser(mainPagePath);
             browser.Dock = DockStyle.Fill;
             browser.AddressChanged += Browser_AddressChanged;
-            browser.TitleChanged += Browser_TitleChanged;
             browser.TitleChanged += Browser_TitleChanged;
 
             InitializeHandlers();
@@ -205,7 +249,7 @@ namespace InfernoBrowser
             }
 
             //Feature to display in Address Bar on which page you are currently on. Solved by @nicky.
-            if (BrowserTabs.SelectedTab != BrowserTabs.TabPages[BrowserTabs.TabPages.Count - 1]) 
+            if (BrowserTabs.SelectedTab != BrowserTabs.TabPages[BrowserTabs.TabPages.Count - 1])
             {
                 var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
 
@@ -217,7 +261,7 @@ namespace InfernoBrowser
         }
 
         //Method to display a warning when exiting a browser with 2 or more tabs. Solved by @Wolferado.
-        private void Inferno_FormClosing(object sender, FormClosingEventArgs e) 
+        private void Inferno_FormClosing(object sender, FormClosingEventArgs e)
         {
             int tabCount = BrowserTabs.TabPages.Count - 1;
             string title = "Warning";
@@ -238,7 +282,50 @@ namespace InfernoBrowser
             }
         }
 
+        //Methods to register visited links in the history.html. Solved by @Glorwen.
+        private void toolStripButtonHistory_Click(object sender, EventArgs e)
+        {
+            toolStripAddressBar.Text = "History";
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
+            {
+                outputFile.WriteLine("</ul></body></html>");
+            }
+            Navigate(docPath + "History.html");
+
+            //render the html page that was made
+            string historyHtmlPage = File.ReadAllText(docPath + "History.html");
+            LoadCustomHTML(historyHtmlPage);
+            historyHtmlPage = historyHtmlPage.Replace("</ul></body></html>", "");
+            File.WriteAllText(docPath + "History.html", historyHtmlPage);
+        }
+
+        private void LoadCustomHTML(string htmlContent)
+        {
+            /*var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
+            selectedBrowser.LoadHtml(htmlContent);*/
+            var selectedTabPage = (TabPage)BrowserTabs.SelectedTab;
+            var selectedBrowser = (ChromiumWebBrowser)selectedTabPage.Controls[0];
+            selectedBrowser.LoadHtml(htmlContent);
+        }
+
+        private void AddToHistory(string url)
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
+            {
+                outputFile.WriteLine($"<li>{DateTime.Now} {url}</li>");
+            }
+        }
+
+        //Methods and variables for Extensions to work. Solved by @Strykeros.
         public bool isOpen { get; set; }
+
+        private void InitializeExtensionsWindow()
+        {
+            extwin.InitializeExtWin();
+            extwin.Height = 250;
+            extwin.Width = 250;
+        }
+
         private void ExtensionsPicBox_Click(object sender, EventArgs e)
         {
             if (isOpen)
@@ -259,44 +346,14 @@ namespace InfernoBrowser
 
         private void ChangeExtWinLoc()
         {
-            extwin.Top = this.Top + 55;
-            extwin.Left = this.Left + 440;
-        }
-        
-        //Methods to register visited links in the history.html. Solved by @Glorwen.
-        
-        private void toolStripButtonHistory_Click(object sender, EventArgs e)
-        {
-            AddBrowserTab();
-            toolStripAddressBar.Text = "History";
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
-            {
-                outputFile.WriteLine("</ul></body></html>");
-            }
-            Navigate(docPath + "History.html");
-            
-            //Render the html page that was made
-            string historyHtmlPage = File.ReadAllText(docPath + "History.html");
-            LoadCustomHTML(historyHtmlPage);
-            historyHtmlPage = historyHtmlPage.Replace("</ul></body></html>", "");
-            File.WriteAllText(docPath + "History.html", historyHtmlPage);
-
+            extwin.Top = this.Top + 60;
+            extwin.Left = this.Left + (this.Width - 160);
         }
 
-        private void LoadCustomHTML(string htmlContent)
+        private void ChangeExtButtonLoc(object sender, EventArgs e)
         {
-            var selectedTabPage = (TabPage)BrowserTabs.SelectedTab;
-            var selectedBrowser = (ChromiumWebBrowser)selectedTabPage.Controls[0];
-            selectedBrowser.LoadHtml(htmlContent);
-        }
-
-        private void AddToHistory(string url)
-        {
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
-            {
-                outputFile.WriteLine($"<li>{DateTime.Now} {url}</li>");
-            }
-
+            extensiosPicBox.Left = toolStrip1.Width - 42;
+            ChangeExtWinLoc();
         }
     }
 }

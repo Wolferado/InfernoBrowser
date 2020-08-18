@@ -69,5 +69,83 @@ namespace InfernoBrowser.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inferno_Browser_Logo__Transparent_ {
+            get {
+                object obj = ResourceManager.GetObject("Inferno_Browser_Logo__Transparent_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inferno_Logo_PNG {
+            get {
+                object obj = ResourceManager.GetObject("Inferno_Logo_PNG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;Inferno_Style.css&quot;&gt;
+        ///    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Aladin&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Main Page&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;div id=&quot;logo&quot;&gt;
+        ///        &lt;img id=&quot;inferno-logo&quot; src=&quot;Inferno Browser Logo (Transparent).png&quot;&gt;
+        ///    &lt;/div&gt;
+        ///    &lt;div id=&quot;name&quot;&gt;
+        ///        InfernoBrowser
+        ///    &lt;/div&gt;        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Inferno_Main_Page {
+            get {
+                return ResourceManager.GetString("Inferno_Main_Page", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to body {
+        ///    background-image: url(Inferno\ Main\ Page\ BG.png);
+        ///}
+        ///
+        ///#logo {
+        ///    display: flex;
+        ///    margin-left: -50px;
+        ///    justify-content: center;
+        ///}
+        ///
+        ///#inferno-logo {
+        ///    width: 250px;
+        ///    height: 350px;
+        ///}
+        ///
+        ///#name {
+        ///    font-family: &apos;Aladin&apos;;
+        ///    display: flex;
+        ///    justify-content: center;
+        ///    color: #d80000;
+        ///    font-size: 110px;
+        ///    margin-left: -10px;
+        ///    margin-top: -20px;
+        ///    text-shadow: 2px 2px #770000e8;
+        ///    
+        ///}.
+        /// </summary>
+        internal static string Inferno_Style {
+            get {
+                return ResourceManager.GetString("Inferno_Style", resourceCulture);
+            }
+        }
     }
 }

@@ -36,7 +36,10 @@ namespace InfernoBrowser
             this.toolStripAddressBar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAddTab = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCloseTab = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonBookmark = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCloseAndOpen = new System.Windows.Forms.ToolStripButton();
             this.BrowserTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -56,137 +59,125 @@ namespace InfernoBrowser
             this.toolStripAddressBar,
             this.toolStripButton4,
             this.toolStripButtonAddTab,
-            this.toolStripButtonHistory});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripButtonCloseTab,
+            this.toolStripButtonBookmark,
+            this.toolStripButtonHistory,
+            this.toolStripButtonCloseAndOpen});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonBack
             // 
             this.toolStripButtonBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonBack.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonBack.Image")));
-            this.toolStripButtonBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonBack, "toolStripButtonBack");
             this.toolStripButtonBack.Name = "toolStripButtonBack";
-            this.toolStripButtonBack.Size = new System.Drawing.Size(36, 22);
-            this.toolStripButtonBack.Text = "Back";
             this.toolStripButtonBack.Click += new System.EventHandler(this.toolStripButtonBack_Click);
             // 
             // toolStripButtonForward
             // 
             this.toolStripButtonForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonForward.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonForward.Image")));
-            this.toolStripButtonForward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonForward, "toolStripButtonForward");
             this.toolStripButtonForward.Name = "toolStripButtonForward";
-            this.toolStripButtonForward.Size = new System.Drawing.Size(54, 22);
-            this.toolStripButtonForward.Text = "Forward";
             this.toolStripButtonForward.Click += new System.EventHandler(this.toolStripButtonForward_Click);
             // 
             // toolStripButtonReload
             // 
             this.toolStripButtonReload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonReload.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonReload.Image")));
-            this.toolStripButtonReload.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonReload, "toolStripButtonReload");
             this.toolStripButtonReload.Name = "toolStripButtonReload";
-            this.toolStripButtonReload.Size = new System.Drawing.Size(50, 22);
-            this.toolStripButtonReload.Text = "Refresh";
             this.toolStripButtonReload.Click += new System.EventHandler(this.toolStripButtonReload_Click);
             // 
             // toolStripAddressBar
             // 
-            this.toolStripAddressBar.Font = new System.Drawing.Font("Segoe UI", 9.163636F);
+            this.toolStripAddressBar.BackColor = System.Drawing.SystemColors.Window;
+            this.toolStripAddressBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.toolStripAddressBar, "toolStripAddressBar");
             this.toolStripAddressBar.Name = "toolStripAddressBar";
-            this.toolStripAddressBar.Size = new System.Drawing.Size(300, 25);
+            this.toolStripAddressBar.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
             this.toolStripAddressBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripAddressBar_KeyDown);
             // 
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(26, 22);
-            this.toolStripButton4.Text = "Go";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButtonGo_Click);
             // 
             // toolStripButtonAddTab
             // 
             this.toolStripButtonAddTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonAddTab.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddTab.Image")));
-            this.toolStripButtonAddTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonAddTab, "toolStripButtonAddTab");
             this.toolStripButtonAddTab.Name = "toolStripButtonAddTab";
-            this.toolStripButtonAddTab.Size = new System.Drawing.Size(54, 22);
-            this.toolStripButtonAddTab.Text = "Add Tab";
             this.toolStripButtonAddTab.Click += new System.EventHandler(this.toolStripButtonAddTab_Click);
+            // 
+            // toolStripButtonCloseTab
+            // 
+            this.toolStripButtonCloseTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButtonCloseTab, "toolStripButtonCloseTab");
+            this.toolStripButtonCloseTab.Name = "toolStripButtonCloseTab";
+            this.toolStripButtonCloseTab.Click += new System.EventHandler(this.toolStripButtonCloseTab_Click);
+            // 
+            // toolStripButtonBookmark
+            // 
+            this.toolStripButtonBookmark.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButtonBookmark, "toolStripButtonBookmark");
+            this.toolStripButtonBookmark.Name = "toolStripButtonBookmark";
             // 
             // toolStripButtonHistory
             // 
             this.toolStripButtonHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonHistory.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHistory.Image")));
-            this.toolStripButtonHistory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.toolStripButtonHistory, "toolStripButtonHistory");
             this.toolStripButtonHistory.Name = "toolStripButtonHistory";
-            this.toolStripButtonHistory.RightToLeftAutoMirrorImage = true;
-            this.toolStripButtonHistory.Size = new System.Drawing.Size(49, 22);
-            this.toolStripButtonHistory.Text = "History";
             this.toolStripButtonHistory.Click += new System.EventHandler(this.toolStripButtonHistory_Click);
+            // 
+            // toolStripButtonCloseAndOpen
+            // 
+            this.toolStripButtonCloseAndOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButtonCloseAndOpen, "toolStripButtonCloseAndOpen");
+            this.toolStripButtonCloseAndOpen.Name = "toolStripButtonCloseAndOpen";
+            this.toolStripButtonCloseAndOpen.Click += new System.EventHandler(this.toolStripButtonCloseAndOpen_Click);
             // 
             // BrowserTabs
             // 
             this.BrowserTabs.Controls.Add(this.tabPage1);
             this.BrowserTabs.Controls.Add(this.tabPage2);
-            this.BrowserTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BrowserTabs.Location = new System.Drawing.Point(0, 25);
+            resources.ApplyResources(this.BrowserTabs, "BrowserTabs");
             this.BrowserTabs.Name = "BrowserTabs";
             this.BrowserTabs.SelectedIndex = 0;
-            this.BrowserTabs.Size = new System.Drawing.Size(800, 425);
-            this.BrowserTabs.TabIndex = 1;
             this.BrowserTabs.Click += new System.EventHandler(this.BrowserTabs_Click);
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 399);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "New Tab";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.927273F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 399);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "+";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // extensiosPicBox
             // 
             this.extensiosPicBox.BackColor = System.Drawing.Color.Transparent;
-            this.extensiosPicBox.Image = ((System.Drawing.Image)(resources.GetObject("extensiosPicBox.Image")));
-            this.extensiosPicBox.Location = new System.Drawing.Point(539, 0);
+            resources.ApplyResources(this.extensiosPicBox, "extensiosPicBox");
             this.extensiosPicBox.Name = "extensiosPicBox";
-            this.extensiosPicBox.Size = new System.Drawing.Size(30, 25);
-            this.extensiosPicBox.TabIndex = 2;
             this.extensiosPicBox.TabStop = false;
             this.extensiosPicBox.Click += new System.EventHandler(this.ExtensionsPicBox_Click);
             // 
             // Inferno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 483);
-            this.Controls.Add(this.BrowserTabs);
             this.Controls.Add(this.extensiosPicBox);
+            this.Controls.Add(this.BrowserTabs);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Inferno";
-            this.Text = "InfernoBrowser";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inferno_FormClosing);
             this.LocationChanged += new System.EventHandler(this.Inferno_LocationChanged);
+            this.SizeChanged += new System.EventHandler(this.ChangeExtButtonLoc);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.BrowserTabs.ResumeLayout(false);
@@ -210,6 +201,9 @@ namespace InfernoBrowser
         private System.Windows.Forms.ToolStripButton toolStripButtonAddTab;
         private System.Windows.Forms.PictureBox extensiosPicBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonHistory;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCloseAndOpen;
+        private System.Windows.Forms.ToolStripButton toolStripButtonBookmark;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCloseTab;
     }
 }
 
