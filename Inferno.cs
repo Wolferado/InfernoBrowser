@@ -55,9 +55,8 @@ namespace InfernoBrowser
         DownloadHandler downHandler = new DownloadHandler();
         ExtensionsWindow extwin = new ExtensionsWindow();
         CustomMenuHandler mainMenuHandler = new CustomMenuHandler();
-        string docPath = @"C:\Users\Public\Documents\";
+        string docPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\source\repos\InfernoBrowser\Resources\";
         string[] domains = { ".com", ".uk", ".de", ".ru", ".org", ".net", ".in", ".ir", ".br", ".au" };
-
         public Inferno()
         {
             InitializeComponent();
@@ -97,24 +96,24 @@ namespace InfernoBrowser
         private void toolStripButtonGo_Click(object sender, EventArgs e)
         {
             Navigate(toolStripAddressBar.Text);
-            //AddToHistory(toolStripAddressBar.Text);
         }
 
         private void toolStripButtonBack_Click(object sender, EventArgs e)
         {
-            browser.Back();
-            //AddToHistory(toolStripAddressBar.Text);
+            var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
+            selectedBrowser.Back();
         }
 
         private void toolStripButtonForward_Click(object sender, EventArgs e)
         {
-            browser.Forward();
-            //AddToHistory(toolStripAddressBar.Text);
+            var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
+            selectedBrowser.Forward();
         }
 
         private void toolStripButtonReload_Click(object sender, EventArgs e)
         {
-            browser.Reload();
+            var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
+            selectedBrowser.Reload();
         }
 
         //Method to close all tabs and open 1 new tab. Solved by @IKSAKS
@@ -137,7 +136,6 @@ namespace InfernoBrowser
             {
                 Navigate(toolStripAddressBar.Text);
                 e.SuppressKeyPress = true; //Feature to disable "beep" sound when hitting "Enter". Solved by @nicky.
-                //AddToHistory(toolStripAddressBar.Text);
             }
         }
 
@@ -178,13 +176,12 @@ namespace InfernoBrowser
                 {
                     toolStripAddressBar.Text = e.Address;
                 }));
-
-                AddToHistory(toolStripAddressBar.Text);
             }
             catch
             {
 
             }
+            AddToHistory(toolStripAddressBar.Text);
         }
 
         private void Browser_TitleChanged(object sender, TitleChangedEventArgs e)
@@ -219,9 +216,7 @@ namespace InfernoBrowser
 
         private void AddBrowser()
         {
-            //Getting FolderPath so Main Page would work at any PC. Developed and solved by @Wolferado.
-            var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            var mainPagePath = userProfile + @"\source\repos\InfernoBrowser\Resources\Inferno_Main_Page.html";
+            var mainPagePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\source\repos\InfernoBrowser\Resources\Inferno_Main_Page.html";
 
             browser = new ChromiumWebBrowser(mainPagePath);
             browser.Dock = DockStyle.Fill;
@@ -312,7 +307,7 @@ namespace InfernoBrowser
         {
             using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
             {
-                outputFile.WriteLine($"<li>{DateTime.Now} {url}</li>");
+                outputFile.WriteLine($"<li>{DateTime.Now} <a href={url}>{url}</a></li>");
             }
         }
 
