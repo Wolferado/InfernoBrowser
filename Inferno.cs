@@ -56,7 +56,8 @@ namespace InfernoBrowser
         ExtensionsWindow extwin = new ExtensionsWindow();
         CustomMenuHandler mainMenuHandler = new CustomMenuHandler();
         string docPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\source\repos\InfernoBrowser\Resources\";
-        string[] domains = { ".com", ".uk", ".de", ".ru", ".org", ".net", ".in", ".ir", ".br", ".au" };
+        string[] domains = { ".com", ".uk", ".de", ".ru", ".org", ".net", ".in", ".ir", ".br", ".au", ".eu" };
+
         public Inferno()
         {
             InitializeComponent();
@@ -84,6 +85,7 @@ namespace InfernoBrowser
             AddBrowser();
             BrowserTabs.TabPages[0].Controls.Add(browser);
 
+            //Creating "History.html" file
             if (!File.Exists(docPath + "History.html"))
             {
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html")))
@@ -116,7 +118,7 @@ namespace InfernoBrowser
             selectedBrowser.Reload();
         }
 
-        //Method to close all tabs and open 1 new tab. Solved by @IKSAKS
+        //Method to close all tabs and open 1 new tab (or C.A.O.). Solved by @IKSAKS.
         private void toolStripButtonCloseAndOpen_Click(object sender, EventArgs e)
         {
             int tabCount = BrowserTabs.TabPages.Count - 1;
@@ -124,7 +126,6 @@ namespace InfernoBrowser
             for (int i = 0; i < tabCount; i++)
             {
                 BrowserTabs.TabPages.Remove(BrowserTabs.SelectedTab);
-
             }
             AddBrowserTab();
             BrowserTabs.SelectTab(0);
@@ -139,13 +140,7 @@ namespace InfernoBrowser
             }
         }
 
-        private void toolStripButtonAddTab_Click(object sender, EventArgs e)
-        {
-            AddBrowserTab();
-            BrowserTabs.SelectedTab = BrowserTabs.TabPages[BrowserTabs.TabPages.Count - 2];
-        }
-
-        //Method to close the selected tab. Solved by @IKSAKS.
+        //Method to close the selected tab with the warning. Solved by @IKSAKS.
         private void toolStripButtonCloseTab_Click(object sender, EventArgs e)
         {
             int tabCount = BrowserTabs.TabPages.Count - 1;
@@ -155,7 +150,6 @@ namespace InfernoBrowser
             }
             else
             {
-
                 string title = "Warning";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show("Are you sure you want to close this browser?", title, buttons);
@@ -181,7 +175,8 @@ namespace InfernoBrowser
             {
 
             }
-            AddToHistory(toolStripAddressBar.Text);
+            string pageTitle = browser.Parent.Text;
+            AddToHistory(toolStripAddressBar.Text, pageTitle);
         }
 
         private void Browser_TitleChanged(object sender, TitleChangedEventArgs e)
@@ -199,13 +194,14 @@ namespace InfernoBrowser
             {
                 var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
 
-                if (domains.Any(toolStripAddressBar.Text.Contains)) //IF statement which defines if Address Bar contains domain. Suggested and developed by @Arvils.
+                //IF statement which defines if Address Bar contains a domain. Suggested and developed by @Arvils.
+                if (domains.Any(toolStripAddressBar.Text.Contains))
                 {
                     selectedBrowser.Load(toolStripAddressBar.Text);
                 }
                 else
                 {
-                    selectedBrowser.Load("https://www.google.com/search?q=" + toolStripAddressBar.Text + "&rlz=1C1CHBD_lvLV844LV844&oq=" + toolStripAddressBar.Text + "&aqs=chrome..69i57j0l5.12767j1j7&sourceid=chrome&ie=UTF-8");
+                    selectedBrowser.Load("https://duckduckgo.com/?q=" + toolStripAddressBar.Text);
                 }
             }
             catch
@@ -216,6 +212,7 @@ namespace InfernoBrowser
 
         private void AddBrowser()
         {
+            //Getting resources folder path, so it would open Main Page at any PC. Developed by @Wolferado.
             var mainPagePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\source\repos\InfernoBrowser\Resources\Inferno_Main_Page.html";
 
             browser = new ChromiumWebBrowser(mainPagePath);
@@ -277,7 +274,7 @@ namespace InfernoBrowser
             }
         }
 
-        //Methods to register visited links in the history.html. Solved by @Glorwen.
+        //Methods to register visited links in the "History.html". Solved by @Glorwen.
         private void toolStripButtonHistory_Click(object sender, EventArgs e)
         {
             toolStripAddressBar.Text = "History";
@@ -303,15 +300,16 @@ namespace InfernoBrowser
             selectedBrowser.LoadHtml(htmlContent);
         }
 
-        private void AddToHistory(string url)
+        private void AddToHistory(string url, string pageTitle)
         {
+            //if(toolStripAddressBar.Text.Contains(data:text/html)) 
             using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "History.html"), true))
             {
-                outputFile.WriteLine($"<li>{DateTime.Now} <a href={url}>{url}</a></li>");
+                outputFile.WriteLine($"<li>{DateTime.Now} <a href={url}>{pageTitle}</a></li>");
             }
         }
 
-        //Methods and variables for Extensions to work. Solved by @Strykeros.
+        //Methods and variables for Extensions to work. Developed by @Strykeros.
         public bool isOpen { get; set; }
 
         private void InitializeExtensionsWindow()

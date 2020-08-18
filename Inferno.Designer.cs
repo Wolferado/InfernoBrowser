@@ -35,7 +35,6 @@ namespace InfernoBrowser
             this.toolStripButtonReload = new System.Windows.Forms.ToolStripButton();
             this.toolStripAddressBar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonAddTab = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCloseTab = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBookmark = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
@@ -58,7 +57,6 @@ namespace InfernoBrowser
             this.toolStripButtonReload,
             this.toolStripAddressBar,
             this.toolStripButton4,
-            this.toolStripButtonAddTab,
             this.toolStripButtonCloseTab,
             this.toolStripButtonBookmark,
             this.toolStripButtonHistory,
@@ -91,9 +89,9 @@ namespace InfernoBrowser
             // 
             this.toolStripAddressBar.BackColor = System.Drawing.SystemColors.Window;
             this.toolStripAddressBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.toolStripAddressBar, "toolStripAddressBar");
             this.toolStripAddressBar.Name = "toolStripAddressBar";
             this.toolStripAddressBar.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            resources.ApplyResources(this.toolStripAddressBar, "toolStripAddressBar");
             this.toolStripAddressBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripAddressBar_KeyDown);
             // 
             // toolStripButton4
@@ -102,13 +100,6 @@ namespace InfernoBrowser
             resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButtonGo_Click);
-            // 
-            // toolStripButtonAddTab
-            // 
-            this.toolStripButtonAddTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.toolStripButtonAddTab, "toolStripButtonAddTab");
-            this.toolStripButtonAddTab.Name = "toolStripButtonAddTab";
-            this.toolStripButtonAddTab.Click += new System.EventHandler(this.toolStripButtonAddTab_Click);
             // 
             // toolStripButtonCloseTab
             // 
@@ -198,7 +189,6 @@ namespace InfernoBrowser
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButtonAddTab;
         private System.Windows.Forms.PictureBox extensiosPicBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonHistory;
         private System.Windows.Forms.ToolStripButton toolStripButtonCloseAndOpen;

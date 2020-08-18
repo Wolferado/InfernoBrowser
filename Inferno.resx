@@ -140,7 +140,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 26</value>
+    <value>41, 23</value>
   </data>
   <data name="toolStripButtonBack.Text" xml:space="preserve">
     <value>Back</value>
@@ -164,7 +164,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonForward.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 26</value>
+    <value>63, 23</value>
   </data>
   <data name="toolStripButtonForward.Text" xml:space="preserve">
     <value>Forward</value>
@@ -188,16 +188,13 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonReload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 26</value>
+    <value>58, 23</value>
   </data>
   <data name="toolStripButtonReload.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
-  <data name="toolStripAddressBar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.163636pt</value>
-  </data>
   <data name="toolStripAddressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 29</value>
+    <value>310, 26</value>
   </data>
   <data name="toolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -218,34 +215,10 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 26</value>
+    <value>31, 23</value>
   </data>
   <data name="toolStripButton4.Text" xml:space="preserve">
     <value>Go</value>
-  </data>
-  <data name="toolStripButtonAddTab.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEOoAABDqAYLTCpgAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
-        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
-        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
-        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
-        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
-        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
-        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
-        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
-        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
-        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripButtonAddTab.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonAddTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 26</value>
-  </data>
-  <data name="toolStripButtonAddTab.Text" xml:space="preserve">
-    <value>Add Tab</value>
   </data>
   <data name="toolStripButtonCloseTab.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -266,7 +239,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonCloseTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 26</value>
+    <value>70, 23</value>
   </data>
   <data name="toolStripButtonCloseTab.Text" xml:space="preserve">
     <value>Close Tab</value>
@@ -290,7 +263,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonBookmark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 26</value>
+    <value>81, 23</value>
   </data>
   <data name="toolStripButtonBookmark.Text" xml:space="preserve">
     <value>Bookmarks</value>
@@ -318,7 +291,7 @@
     <value>True</value>
   </data>
   <data name="toolStripButtonHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 26</value>
+    <value>57, 23</value>
   </data>
   <data name="toolStripButtonHistory.Text" xml:space="preserve">
     <value>History</value>
@@ -342,7 +315,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonCloseAndOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 26</value>
+    <value>51, 23</value>
   </data>
   <data name="toolStripButtonCloseAndOpen.Text" xml:space="preserve">
     <value>C.A.O.</value>
@@ -351,7 +324,7 @@
     <value>0, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1232, 29</value>
+    <value>1232, 26</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -379,7 +352,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1224, 601</value>
+    <value>1224, 604</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -433,10 +406,10 @@
     <value>Fill</value>
   </data>
   <data name="BrowserTabs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 29</value>
+    <value>0, 26</value>
   </data>
   <data name="BrowserTabs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1232, 627</value>
+    <value>1232, 630</value>
   </data>
   <data name="BrowserTabs.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2835,12 +2808,6 @@
     <value>toolStripButton4</value>
   </data>
   <data name="&gt;&gt;toolStripButton4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonAddTab.Name" xml:space="preserve">
-    <value>toolStripButtonAddTab</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonAddTab.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripButtonCloseTab.Name" xml:space="preserve">
