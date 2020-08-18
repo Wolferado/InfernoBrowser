@@ -1,0 +1,61 @@
+body {
+    background-image: url(Inferno\ Main\ Page\ BG.png);
+}
+
+#logo {
+    display: flex;
+    margin-left: -50px;
+    justify-content: center;
+}
+
+#inferno-logo {
+    width: 250px;
+    height: 350px;
+}
+
+#name {
+    font-family: 'Aladin';
+    display: flex;
+    justify-content: center;
+    color: #d80000;
+    font-size: 110px;
+    margin-left: -10px;
+    margin-top: -20px;
+    text-shadow: 2px 2px #770000e8;
+}
+
+input {
+    color: black;
+}
+
+#search {
+    display: flex;
+    justify-self: center;
+    font-size: 35px;
+    border-radius: 10px;
+    color: #d80000;
+    background-color: #ffee0069;
+    box-shadow: 2px 2px #dfab00e8;
+    text-shadow: 2px 2px #770000e8;
+}
+
+::placeholder{
+    color: #d80000;
+}
+
+#search-button {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    border-radius: 10px;
+    background-color: #ffee0069;
+    color: #d80000;
+    margin-left: 20px;
+    box-shadow: 2px 2px #dfab00e8;
+    text-shadow: 2px 2px #770000e8;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+}

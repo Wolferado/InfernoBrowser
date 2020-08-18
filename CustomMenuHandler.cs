@@ -10,6 +10,7 @@ using System.IO;
 using Syroot.Windows.IO;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
+using InfernoBrowser;
 
 public class CustomMenuHandler : IContextMenuHandler
 {
@@ -27,40 +28,17 @@ public class CustomMenuHandler : IContextMenuHandler
             model.AddSeparator();
         }
 
-        model.AddItem((CefMenuCommand)26501, "Show DevTools"); //Default commands
-        model.AddItem((CefMenuCommand)26502, "Close DevTools"); //Default commands
+        model.AddItem((CefMenuCommand)26504, "Bookmark this WebPage");
 
         model.AddSeparator();
 
         model.AddItem((CefMenuCommand)26506, "Copy Image");
         model.AddItem((CefMenuCommand)26504, "Save image");
         model.AddItem((CefMenuCommand)26505, "Save image as");
-        model.AddSeparator();
-
-        model.AddItem((CefMenuCommand)26503, "Display alert message");
     }
 
     public bool OnContextMenuCommand(IWebBrowser browserControl, IBrowser browser, IFrame frame, IContextMenuParams parameters, CefMenuCommand commandId, CefEventFlags eventFlags)
     {
-
-        if (commandId == (CefMenuCommand)26501)
-        {
-            browser.GetHost().ShowDevTools();
-            return true;
-        }
-
-        if (commandId == (CefMenuCommand)26502)
-        {
-            browser.GetHost().CloseDevTools();
-            return true;
-        }
-
-        if (commandId == (CefMenuCommand)26503)
-        {
-            MessageBox.Show("An example alert message ?");
-            return true;
-        }
-
         if (commandId == (CefMenuCommand)26506) // Copy Image
         {
 
@@ -81,6 +59,11 @@ public class CustomMenuHandler : IContextMenuHandler
             SaveImage(parameters.SourceUrl);
         }
 
+        if(commandId == (CefMenuCommand)26504) //Bookmarking
+        {
+            
+        }
+
         if (commandId == (CefMenuCommand)26504) //Save Image
         {
             string downloadFolder = new KnownFolder(KnownFolderType.Downloads).Path;
@@ -98,7 +81,6 @@ public class CustomMenuHandler : IContextMenuHandler
                 Download(parameters.SourceUrl, saveDialog.SelectedPath);
             }
         }
-
 
         // Return false should ignore the selected option of the user !
         return false;
