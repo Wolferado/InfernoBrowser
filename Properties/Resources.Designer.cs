@@ -71,11 +71,101 @@ namespace InfernoBrowser.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to $(function () {
+        ///    $(&apos;.wmd-view-topscroll&apos;).on(&apos;scroll&apos;, function (e) {
+        ///        $(&apos;.wmd-view&apos;).scrollLeft($(&apos;.wmd-view-topscroll&apos;).scrollLeft());
+        ///    }); 
+        ///    $(&apos;.wmd-view&apos;).on(&apos;scroll&apos;, function (e) {
+        ///        $(&apos;.wmd-view-topscroll&apos;).scrollLeft($(&apos;.wmd-view&apos;).scrollLeft());
+        ///    });
+        ///});
+        ///$(window).on(&apos;load&apos;, function (e) {
+        ///    $(&apos;.container&apos;).width( $(&apos;.historyList&apos;)[0].scrollWidth)
+        ///    $(&apos;.scroll-div&apos;).width( $(&apos;.historyList&apos;)[0].scrollWidth)
+        ///});.
+        /// </summary>
+        internal static string History_Function {
+            get {
+                return ResourceManager.GetString("History_Function", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to h1 {
+        ///    color: rgb(232, 70, 21);
+        ///    font-family: &quot;Aladin&quot;;
+        ///    font-size: 60px;
+        ///    line-height: 0.5;
+        ///}
+        ///
+        ///
+        ///
+        ///hr {
+        ///    display: block;
+        ///    height: 6px;
+        ///    border: 0;
+        ///    border-top: 4px solid rgb(255, 185, 15);
+        ///    margin: 1em 0;
+        ///    padding: 0;
+        ///
+        ///}
+        ///
+        ///body {
+        ///    background-color: rgb(78, 28, 57);
+        ///    background-repeat: no-repeat;
+        ///    background-attachment: fixed;
+        ///    line-height: 1.5;
+        ///}
+        ///
+        ///li{
+        ///    color: rgb(255, 185, 15);
+        ///    text-align: left;
+        ///    margin: 20px;
+        ///    width: auto;
+        ///  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string History_Style {
+            get {
+                return ResourceManager.GetString("History_Style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Incognito_Off {
+            get {
+                object obj = ResourceManager.GetObject("Incognito_Off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Incognito_On {
+            get {
+                object obj = ResourceManager.GetObject("Incognito_On", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Inferno_Browser_Logo__Transparent_ {
             get {
                 object obj = ResourceManager.GetObject("Inferno_Browser_Logo__Transparent_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inferno_Browser_Logo__Transparent_1 {
+            get {
+                object obj = ResourceManager.GetObject("Inferno_Browser_Logo__Transparent_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,6 +205,40 @@ namespace InfernoBrowser.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inferno_Main_Page_BG {
+            get {
+                object obj = ResourceManager.GetObject("Inferno_Main_Page_BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;Inferno_Style.css&quot;&gt;
+        ///    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Aladin&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Main Page&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;div id=&quot;logo&quot;&gt;
+        ///        &lt;img id=&quot;inferno-logo&quot; src=&quot;Inferno Browser Logo (Transparent).png&quot;&gt;
+        ///    &lt;/div&gt;
+        ///    &lt;div id=&quot;name&quot;&gt;
+        ///        InfernoBrowser
+        ///    &lt;/div&gt;        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Inferno_Main_Page1 {
+            get {
+                return ResourceManager.GetString("Inferno_Main_Page1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to body {
         ///    background-image: url(Inferno\ Main\ Page\ BG.png);
         ///}
@@ -139,12 +263,790 @@ namespace InfernoBrowser.Properties {
         ///    margin-left: -10px;
         ///    margin-top: -20px;
         ///    text-shadow: 2px 2px #770000e8;
-        ///    
-        ///}.
+        ///}
+        ///
+        ///input {
+        ///    color: black;
+        ///}
+        ///
+        ///#search {
+        ///    display: flex;
+        ///    ju [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Inferno_Style {
             get {
                 return ResourceManager.GetString("Inferno_Style", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to body {
+        ///    background-image: url(Inferno\ Main\ Page\ BG.png);
+        ///}
+        ///
+        ///#logo {
+        ///    display: flex;
+        ///    margin-left: -50px;
+        ///    justify-content: center;
+        ///}
+        ///
+        ///#inferno-logo {
+        ///    width: 250px;
+        ///    height: 350px;
+        ///}
+        ///
+        ///#name {
+        ///    font-family: &apos;Aladin&apos;;
+        ///    display: flex;
+        ///    justify-content: center;
+        ///    color: #d80000;
+        ///    font-size: 110px;
+        ///    margin-left: -10px;
+        ///    margin-top: -20px;
+        ///    text-shadow: 2px 2px #770000e8;
+        ///}
+        ///
+        ///input {
+        ///    color: black;
+        ///}
+        ///
+        ///#search {
+        ///    display: flex;
+        ///    ju [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Inferno_Style1 {
+            get {
+                return ResourceManager.GetString("Inferno_Style1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_1 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_10 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_11 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_12 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_13 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_14 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_15 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_16 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_2 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_3 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_4 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_5 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_6 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_7 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_8 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_backwards_9 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_backwards_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_1 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_2 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_3 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_4 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_5 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_6 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_7 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_8 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_delete_9 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_delete_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_1 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_10 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_11 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_12 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_13 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_14 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_15 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_16 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_2 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_3 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_4 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_5 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_6 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_7 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_8 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_forwards_9 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_forwards_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_1 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_10 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_11 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_12 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_2 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_3 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_4 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_5 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_6 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_7 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_8 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_go_9 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_go_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_1 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_2 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_3 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_4 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_5 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_6 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_7 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_8 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_history_9 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_history_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_1 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_10 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_11 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_2 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_3 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_4 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_5 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_6 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_7 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_8 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navbtn_reload_9 {
+            get {
+                object obj = ResourceManager.GetObject("navbtn_reload_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

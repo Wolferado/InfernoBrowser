@@ -154,6 +154,246 @@
   <ItemGroup>
     <None Include="Resources\Inferno_Style.css" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incognito_Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incognito_On.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History_Function.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History_Style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_backwards_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_delete_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_forwards_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_go_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_history_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbtn_reload_13.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

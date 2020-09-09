@@ -11,11 +11,13 @@ using Syroot.Windows.IO;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
 using InfernoBrowser;
+using CefSharp.Example.Handlers;
 
 public class CustomMenuHandler : IContextMenuHandler
 {
     public void OnBeforeContextMenu(IWebBrowser browserControl, IBrowser browser, IFrame frame, IContextMenuParams parameters, IMenuModel model)
     {
+        
         // Remove any existent option using the Clear method of the model
         //
         //model.Clear();
@@ -27,10 +29,6 @@ public class CustomMenuHandler : IContextMenuHandler
         {
             model.AddSeparator();
         }
-
-        model.AddItem((CefMenuCommand)26504, "Bookmark this WebPage");
-
-        model.AddSeparator();
 
         model.AddItem((CefMenuCommand)26506, "Copy Image");
         model.AddItem((CefMenuCommand)26504, "Save image");
@@ -57,11 +55,6 @@ public class CustomMenuHandler : IContextMenuHandler
             System.IO.Directory.CreateDirectory(subPath);
 
             SaveImage(parameters.SourceUrl);
-        }
-
-        if(commandId == (CefMenuCommand)26504) //Bookmarking
-        {
-            
         }
 
         if (commandId == (CefMenuCommand)26504) //Save Image
