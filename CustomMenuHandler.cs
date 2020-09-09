@@ -15,6 +15,10 @@ using CefSharp.Example.Handlers;
 
 public class CustomMenuHandler : IContextMenuHandler
 {
+    string filter = null;
+    bool result = false;
+
+    SaveFileDialog saveFile;
     public void OnBeforeContextMenu(IWebBrowser browserControl, IBrowser browser, IFrame frame, IContextMenuParams parameters, IMenuModel model)
     {
         
@@ -54,24 +58,27 @@ public class CustomMenuHandler : IContextMenuHandler
 
             System.IO.Directory.CreateDirectory(subPath);
 
-            SaveImage(parameters.SourceUrl);
+            CopyImage(parameters.SourceUrl);
         }
 
         if (commandId == (CefMenuCommand)26504) //Save Image
         {
             string downloadFolder = new KnownFolder(KnownFolderType.Downloads).Path;
+            var fileName = Path.GetFileName(parameters.SourceUrl);
 
-            Download(parameters.SourceUrl, downloadFolder);
+            Download(parameters.SourceUrl, downloadFolder, fileName);
         }
 
         if (commandId == (CefMenuCommand)26505) //Save as
         {
-            var saveDialog = new FolderBrowserDialog();
-            DialogResult result = saveDialog.ShowDialog();
+            SaveFileAs(parameters);
 
-            if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(saveDialog.SelectedPath))
+            if (result)
             {
-                Download(parameters.SourceUrl, saveDialog.SelectedPath);
+                string filePath = Path.GetDirectoryName(saveFile.FileName);
+                var fileName = Path.GetFileName(saveFile.FileName);
+
+                Download(parameters.SourceUrl, filePath, fileName);
             }
         }
 
@@ -92,11 +99,15 @@ public class CustomMenuHandler : IContextMenuHandler
 
     //Here you can make different commands
 
-    public void Download(string url, string filePath)
+    public void Download(string url, string filePath, string fileName)
     {
+        if(result != true)
+        {
+            return;
+        }
         filePath += @"\";
         Console.WriteLine("Downloads folder path: " + filePath);
-        string fileAndPath = filePath + Path.GetFileName(url);
+        string fileAndPath = filePath + fileName;
         using (WebClient client = new WebClient())
         {
             try
@@ -119,7 +130,7 @@ public class CustomMenuHandler : IContextMenuHandler
         Console.WriteLine("File has been downloaded.");
     }
 
-    public void SaveImage(string imageUrl)
+    public void CopyImage(string imageUrl)
     {
         System.Net.WebClient client = new WebClient();
         System.IO.Stream stream = client.OpenRead(imageUrl);
@@ -144,6 +155,46 @@ public class CustomMenuHandler : IContextMenuHandler
         stream.Flush();
         stream.Close();
         client.Dispose();
+    }
+
+    private void SaveFileAs(IContextMenuParams parameters) //In the future this can/will be made to download universal files
+    {
+        CheckTheFilter(parameters);
+        saveFile = new SaveFileDialog();
+        saveFile.Title = "Save an image file";
+        saveFile.Filter = filter;
+        saveFile.FileName = Path.GetFileNameWithoutExtension(parameters.SourceUrl);
+
+        DialogResult dialogResult = saveFile.ShowDialog();
+        if (dialogResult == DialogResult.OK)
+        {
+            result = true;
+        }
+    }
+
+    private void CheckTheFilter(IContextMenuParams parameters)//It checks the files filter/format (for now it only support Images) :D
+    {
+        var easyVar = Path.GetExtension(parameters.SourceUrl);
+
+        var filterDictionary = new Dictionary<string, string>(){
+            {".png", "PNG Image"},
+            {".bmp", "Bitmap Image"},
+            {".gif", "Gif Image"},
+            {".jpeg", "JPEG Image"},
+            {".tiff", "Tiff Image"},
+            {".wmf", "Wmf Image"}
+        };
+
+        for (int i = 0; i < filterDictionary.Count; i++)
+        {
+            if (easyVar == filterDictionary.ElementAt(i).Key)
+            {
+                string key = filterDictionary.ElementAt(i).Key;
+                string value = filterDictionary.ElementAt(i).Value;
+
+                filter = $"{value} |{key}";
+            }
+        }
     }
 }
 
