@@ -321,7 +321,7 @@ namespace InfernoBrowser
         //Method for enabling and disabling buttons animations.
         private void EnableOrDisableButtonsAnimations(object sender, EventArgs e)
         {
-            if(animationCheck.Checked == true)
+            if (animationCheck.Checked == true)
             {
                 toolStripButtonBack.MouseEnter += StartBackwardBtnTimer;
                 toolStripButtonForward.MouseEnter += StartForwardBtnTimer;
@@ -369,7 +369,7 @@ namespace InfernoBrowser
         {
             /*var selectedBrowser = (ChromiumWebBrowser)BrowserTabs.SelectedTab.Controls[0];
             selectedBrowser.LoadHtml(htmlContent);*/
-            
+
             var selectedTabPage = (TabPage)BrowserTabs.SelectedTab;
             var selectedBrowser = (ChromiumWebBrowser)selectedTabPage.Controls[0];
             selectedBrowser.LoadHtml(htmlContent);
@@ -409,12 +409,10 @@ namespace InfernoBrowser
             if (isOpen)
             {
                 extwin.Show();
-                animationCheck.Visible = true;
             }
             else
             {
                 extwin.Hide();
-                animationCheck.Visible = false;
             }
             isOpen = !isOpen;
         }
@@ -427,7 +425,7 @@ namespace InfernoBrowser
         private void ChangeExtWinLoc()
         {
             extwin.Top = this.Top + 60;
-            extwin.Left = this.Left + (this.Width - 160);
+            extwin.Left = this.Left + (this.Width - 150);
 
             //Changing checkbox's location when size of the form is changed
             animationCheck.Location = new Point(toolStrip1.Width - 190, toolStrip1.Top + 8);
@@ -437,7 +435,7 @@ namespace InfernoBrowser
             {
                 animationCheck.Hide();
             }
-            else if(animationCheck.Bounds.IntersectsWith(toolStripButtonCloseAndOpen.Bounds))
+            else if (animationCheck.Bounds.IntersectsWith(toolStripButtonCloseAndOpen.Bounds))
             {
                 animationCheck.Hide();
             }
@@ -445,20 +443,10 @@ namespace InfernoBrowser
             {
                 animationCheck.Show();
             }
-            //Hiding extension's picture box when it boudns with toolstrip's buttons
-            if (extensiosPicBox.Bounds.IntersectsWith(toolStripButtonIncognito.Bounds))
-            {
-                extensiosPicBox.Hide();
-            }
-            else
-            {
-                extensiosPicBox.Show();
-            }
         }
 
         private void ChangeExtButtonLoc(object sender, EventArgs e)
         {
-            extensiosPicBox.Left = toolStrip1.Width - 42;
             ChangeExtWinLoc();
         }
 
@@ -469,7 +457,7 @@ namespace InfernoBrowser
             forwardBtnTimer.Tick += ForwardBtnTimer_Tick;
         }
 
-        private void StartForwardBtnTimer(object sender, EventArgs e) 
+        private void StartForwardBtnTimer(object sender, EventArgs e)
         {
             forwardBtnTimer.Start();
         }
@@ -533,7 +521,7 @@ namespace InfernoBrowser
         {
             toolStripButtonForward.Image = (Image)Resources.ResourceManager.GetObject("navbtn_forwards_" + forwardBtnCounter);
             forwardBtnCounter++;
-            if(forwardBtnCounter == 16)
+            if (forwardBtnCounter == 16)
             {
                 forwardBtnTimer.Stop();
                 forwardBtnCounter = 1;

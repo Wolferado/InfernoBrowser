@@ -44,14 +44,13 @@ namespace InfernoBrowser
             this.toolStripButtonCloseAndOpen = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonIncognito = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonExt = new System.Windows.Forms.ToolStripButton();
             this.BrowserTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.extensiosPicBox = new System.Windows.Forms.PictureBox();
             this.animationCheck = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.BrowserTabs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.extensiosPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -71,14 +70,14 @@ namespace InfernoBrowser
             this.toolStripSeparator5,
             this.toolStripButtonCloseAndOpen,
             this.toolStripSeparator4,
-            this.toolStripButtonIncognito});
+            this.toolStripButtonIncognito,
+            this.toolStripButtonExt});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
             // toolStripButtonBack
             // 
             this.toolStripButtonBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonBack.Image = global::InfernoBrowser.Properties.Resources.navbtn_backwards_1;
             resources.ApplyResources(this.toolStripButtonBack, "toolStripButtonBack");
             this.toolStripButtonBack.Name = "toolStripButtonBack";
             this.toolStripButtonBack.Click += new System.EventHandler(this.toolStripButtonBack_Click);
@@ -87,7 +86,6 @@ namespace InfernoBrowser
             // toolStripButtonForward
             // 
             this.toolStripButtonForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonForward.Image = global::InfernoBrowser.Properties.Resources.navbtn_forwards_1;
             resources.ApplyResources(this.toolStripButtonForward, "toolStripButtonForward");
             this.toolStripButtonForward.Name = "toolStripButtonForward";
             this.toolStripButtonForward.Click += new System.EventHandler(this.toolStripButtonForward_Click);
@@ -101,7 +99,6 @@ namespace InfernoBrowser
             // toolStripButtonReload
             // 
             this.toolStripButtonReload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonReload.Image = global::InfernoBrowser.Properties.Resources.navbtn_reload_1;
             resources.ApplyResources(this.toolStripButtonReload, "toolStripButtonReload");
             this.toolStripButtonReload.Name = "toolStripButtonReload";
             this.toolStripButtonReload.Click += new System.EventHandler(this.toolStripButtonReload_Click);
@@ -119,7 +116,6 @@ namespace InfernoBrowser
             // toolStripButtonBrowse
             // 
             this.toolStripButtonBrowse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonBrowse.Image = global::InfernoBrowser.Properties.Resources.navbtn_go_1;
             resources.ApplyResources(this.toolStripButtonBrowse, "toolStripButtonBrowse");
             this.toolStripButtonBrowse.Name = "toolStripButtonBrowse";
             this.toolStripButtonBrowse.Click += new System.EventHandler(this.toolStripButtonGo_Click);
@@ -133,7 +129,6 @@ namespace InfernoBrowser
             // toolStripButtonCloseTab
             // 
             this.toolStripButtonCloseTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCloseTab.Image = global::InfernoBrowser.Properties.Resources.navbtn_delete_1;
             resources.ApplyResources(this.toolStripButtonCloseTab, "toolStripButtonCloseTab");
             this.toolStripButtonCloseTab.Name = "toolStripButtonCloseTab";
             this.toolStripButtonCloseTab.Click += new System.EventHandler(this.toolStripButtonCloseTab_Click);
@@ -147,7 +142,6 @@ namespace InfernoBrowser
             // toolStripButtonHistory
             // 
             this.toolStripButtonHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonHistory.Image = global::InfernoBrowser.Properties.Resources.navbtn_history_1;
             resources.ApplyResources(this.toolStripButtonHistory, "toolStripButtonHistory");
             this.toolStripButtonHistory.Name = "toolStripButtonHistory";
             this.toolStripButtonHistory.Click += new System.EventHandler(this.toolStripButtonHistory_Click);
@@ -173,10 +167,17 @@ namespace InfernoBrowser
             // toolStripButtonIncognito
             // 
             this.toolStripButtonIncognito.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonIncognito.Image = global::InfernoBrowser.Properties.Resources.Incognito_Off;
             resources.ApplyResources(this.toolStripButtonIncognito, "toolStripButtonIncognito");
             this.toolStripButtonIncognito.Name = "toolStripButtonIncognito";
             this.toolStripButtonIncognito.Click += new System.EventHandler(this.toolStripButtonIncognito_Click);
+            // 
+            // toolStripButtonExt
+            // 
+            this.toolStripButtonExt.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButtonExt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButtonExt, "toolStripButtonExt");
+            this.toolStripButtonExt.Name = "toolStripButtonExt";
+            this.toolStripButtonExt.Click += new System.EventHandler(this.ExtensionsPicBox_Click);
             // 
             // BrowserTabs
             // 
@@ -199,14 +200,6 @@ namespace InfernoBrowser
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // extensiosPicBox
-            // 
-            this.extensiosPicBox.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.extensiosPicBox, "extensiosPicBox");
-            this.extensiosPicBox.Name = "extensiosPicBox";
-            this.extensiosPicBox.TabStop = false;
-            this.extensiosPicBox.Click += new System.EventHandler(this.ExtensionsPicBox_Click);
-            // 
             // animationCheck
             // 
             resources.ApplyResources(this.animationCheck, "animationCheck");
@@ -221,7 +214,6 @@ namespace InfernoBrowser
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.animationCheck);
-            this.Controls.Add(this.extensiosPicBox);
             this.Controls.Add(this.BrowserTabs);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Inferno";
@@ -232,7 +224,6 @@ namespace InfernoBrowser
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.BrowserTabs.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.extensiosPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,7 +240,6 @@ namespace InfernoBrowser
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ToolStripButton toolStripButtonBrowse;
-        private System.Windows.Forms.PictureBox extensiosPicBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonHistory;
         private System.Windows.Forms.ToolStripButton toolStripButtonCloseAndOpen;
         private System.Windows.Forms.ToolStripButton toolStripButtonCloseTab;
@@ -260,6 +250,7 @@ namespace InfernoBrowser
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.CheckBox animationCheck;
+        private System.Windows.Forms.ToolStripButton toolStripButtonExt;
     }
 }
 

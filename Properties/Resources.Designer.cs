@@ -91,38 +91,7 @@ namespace InfernoBrowser.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to h1 {
-        ///    color: rgb(232, 70, 21);
-        ///    font-family: &quot;Aladin&quot;;
-        ///    font-size: 60px;
-        ///    line-height: 0.5;
-        ///}
-        ///
-        ///
-        ///
-        ///hr {
-        ///    display: block;
-        ///    height: 6px;
-        ///    border: 0;
-        ///    border-top: 4px solid rgb(255, 185, 15);
-        ///    margin: 1em 0;
-        ///    padding: 0;
-        ///
-        ///}
-        ///
-        ///body {
-        ///    background-color: rgb(78, 28, 57);
-        ///    background-repeat: no-repeat;
-        ///    background-attachment: fixed;
-        ///    line-height: 1.5;
-        ///}
-        ///
-        ///li{
-        ///    color: rgb(255, 185, 15);
-        ///    text-align: left;
-        ///    margin: 20px;
-        ///    width: auto;
-        ///  [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to h1{color:#e84615;font-family:Aladin;font-size:60px;line-height:.5}hr{display:block;height:6px;border:0;border-top:4px solid #ffb90f;margin:1em 0;padding:0}body{background-color:#4e1c39;background-repeat:no-repeat;background-attachment:fixed;line-height:1.5}li{color:#ffb90f;text-align:left;margin:20px;width:auto;height:auto;border-width:auto;box-shadow:1px 1px 5px;box-shadow:1px 1px 5px var(--box-shadow-color);--box-shadow-color:black}.historyList{width:auto;height:auto;list-style-image:url(162291.jpg);list- [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string History_Style {
             get {
