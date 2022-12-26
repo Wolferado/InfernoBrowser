@@ -1,30 +1,22 @@
-# ChromiumBrowser
-_Creating a Chromium based browser like a professionals in the team._
+# InfernoBrowser
 
-## Things important to know:
-1. Branch ___"master"___ in ___"InfernoBrowser"___ repository is a branch for our co-op project. All pull requests go straight to this branch __(all fixes, changes, updates and etc.)__.
+## IMPORTANT NOTE!
+This project was presented and discontinued. Due to that, it has been archived. 
+##
 
-2. Repository ___"datorium-chromium"___ is a repository with the project which we have been developing together with Elchin on the sessions __(created to refresh or remember some details while coding)__. Updated with comments.
+InfernoBrowser - a browser developed by [Datorium] C# course students, 10 in total. InfernoBrowser is based on Chromium.
 
-3. Fork ___"master"___ branch and use it for developing new features or coding. It would prevent from conflicts when merging your pull request with the branch.
+Features of the browser:
+- Unique main page with a search bar
+- DuckDuckGo is a default search engine
+- TabControl with ability to add new tabs
+- Navigational buttons with animations and explanations (Go Back, Go Next, Reload and etc.)
+- Copy/Save functionality
+- C.A.O. (Clear And Open) button - closes every tab and opens 1 new tab.
+- History recording
+- Incognito Mode
+- Warning pop-ups when closing more than 2 tabs simultaneously
+- Fixed minimum window size
+- Domain-friendly searchbar
 
-4. This project contains some NuGet packages for features to work and for stable processing:
-* cef.redist.x64
-* cef.redist.x86
-* CefSharp.Common
-* CefSharp.WinForms
-* Syroot.Windows.IO.KnownFolders
-* System.Security.Principal.Windows
-
-List could be updated while working.
-
-## Fixing cloning issue:
-_If you encounter a problem, that this project won't load properly (a lot of errors in the code, designer can't load and etc.) you should do the following:_
-
-1. Change your ___CPU configuration___ _(Build - Configuration Manager)_ and set Active solution platform to **x64**. _If you don't have that one, you should create it._
-
-2. Install ___"AutoFixture"___ NuGet package. _(Project - Manage NuGet packages - Browse - Type in "AutoFixture" - Click "Install")_. Usually it solves all errors by installing all important packages.
-
-3. Change at second layer class name to a different one _(even adding one letter would work)_. It fixes the Designer, so it could work.
-
-## Don't be shy and code together like a team. :)
+[Datorium]: https://datorium.eu/
